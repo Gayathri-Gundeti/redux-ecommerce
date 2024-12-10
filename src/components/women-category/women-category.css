@@ -1,0 +1,46 @@
+.women-container{
+    padding: 20px;
+    
+}
+.women-container h3{
+    color: orange;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 15px;
+}
+.women-card-part{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.women-card{
+    width: 290px;
+    height: 300px;
+}
+.women-card-header{
+    height: 200px;
+    width: 100%;
+}
+.women-card-header img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+}
+.women-card-body{
+    height: 200px;
+    overflow: auto;
+}
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid lightblue;
+    border-right-color: orange;
+    animation: l2 1s infinite linear;
+    margin: 0 auto;
+    float: none;
+  }
+  @keyframes l2 {to{transform: rotate(1turn)}}

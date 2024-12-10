@@ -1,0 +1,43 @@
+.login-container{
+    background-image: url("../../../public/images/orange-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-logo{
+    text-align: center;
+}
+.login-logo span{
+    font-size: 30px;
+    color: gray;
+    margin-left: -5px;
+
+
+}
+.login-logo img{
+    width: 70px;
+    height: 50px;
+    margin-top: -10px;
+
+}
+
+.login-form{
+    background-color: white;
+    border-radius: 5px;
+    padding: 25px;
+    height: auto;
+    width: 400px;
+}
+
+@media screen and (max-width:425px){
+    .login-form{
+        background-color: white;
+        border-radius: 5px;
+        padding: 25px;
+        height: auto;
+        width: auto;
+    }
+}

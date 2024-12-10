@@ -1,0 +1,38 @@
+.register-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("../../../public/images/orange-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.register-form{
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+    height: auto;
+    width: 400px;
+}
+.register-logo{
+    text-align: center;
+}
+.register-logo span{
+    font-size: 30px;
+    color: gray;
+    margin-left: -5px;
+}
+.register-logo img{
+    width: 70px;
+    height: 50px;
+    margin-top: -10px;
+}
+@media screen and (max-width:425px){
+    .register-form{
+        background-color: white;
+        padding: 25px;
+        border-radius: 5px;
+        height: auto;
+        width: auto;
+    }
+}

@@ -1,0 +1,45 @@
+.men-container{
+    padding: 20px;
+    
+}
+.men-container h3{
+    color: orange;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 15px;
+}
+.men-card-part{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.men-card{
+    width: 290px;
+    height: 400px;
+}
+.men-card-header{
+    height: 200px;
+    width: 100%;
+}
+.men-card-header img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.men-card-body{
+    height: 200px;
+    overflow: auto;
+}
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid lightblue;
+    border-right-color: orange;
+    animation: l2 1s infinite linear;
+    margin: 0 auto;
+    float: none;
+  }
+  @keyframes l2 {to{transform: rotate(1turn)}}

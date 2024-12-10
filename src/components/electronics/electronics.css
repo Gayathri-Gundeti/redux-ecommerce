@@ -1,0 +1,45 @@
+.electronics-container{
+    padding: 20px;
+    
+}
+.electronics-container h3{
+    color: orange;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 15px;
+}
+.electronics-card-part{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.electronics-card{
+    width: 290px;
+    height: 400px;
+}
+.electronics-card-header{
+    height: 200px;
+    width: 100%;
+}
+.electronics-card-header img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.electronics-card-body{
+    height: 200px;
+    overflow: auto;
+}
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid lightblue;
+    border-right-color: orange;
+    animation: l2 1s infinite linear;
+    margin: 0 auto;
+    float: none;
+  }
+  @keyframes l2 {to{transform: rotate(1turn)}}
