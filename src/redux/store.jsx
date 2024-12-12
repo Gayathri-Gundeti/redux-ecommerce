@@ -17,18 +17,19 @@ export function Passwordfn(Password) {
     payload: { Password },
   };
 }
-export function Addcart(Array){
-  return{
-    type:"Addcart",
-    payload:{Array},
-  }
+export function Addcart(items) {
+  return {
+    type: "Addcart",
+    payload: { items },
+  };
 }
 const initialState = {
   Name: "",
   Email: "",
   Password: "",
-  Array:[],
+  Array: [],
 };
+
 function ReducerFn(state = initialState, action) {
   switch (action.type) {
     case "Namefn":
@@ -47,11 +48,10 @@ function ReducerFn(state = initialState, action) {
         Password: action.payload.Password,
       };
     case "Addcart":
-      return{
+      return {
         ...state,
         Array: [...state.Array, action.payload],
-        
-      }
+      };
     default:
       return state;
   }
