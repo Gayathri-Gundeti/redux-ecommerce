@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "./navbar.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {Logout} from "../../redux/store";
+
 
 export function NavBar() {
-  const [data, setData] = useState(JSON.parse(localStorage.getItem("names")) || []);
-  const [user] = useState(localStorage.getItem("Name"));
+  const storedata=useSelector((state)=>state.app);
+  const dispatch=useDispatch();
+  const [data,setData]=useState(storedata.Array);
+  // const [data, setData] = useState(JSON.parse(localStorage.getItem("names")) || []);
+  // const [user] = useState(localStorage.getItem("Name"));
+  const[user]=useState(storedata.Name);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const email = localStorage.getItem("Email");
-  const password = localStorage.getItem("Password");
+  // const email = localStorage.getItem("Email");
+  const email=storedata.Email;
+  // const password = localStorage.getItem("Password");
+  const password=storedata.Password;
   const [cart, setCart] = useState(0);
   let navigate = useNavigate();
 
@@ -26,9 +35,10 @@ export function NavBar() {
 
 
   function handleLogout() {
-    localStorage.removeItem("Name");
-    localStorage.removeItem("Email");
-    localStorage.removeItem("Password");
+    // localStorage.removeItem("Name");
+    // localStorage.removeItem("Email");
+    // localStorage.removeItem("Password");
+    dispatch(Logout());
     setIsLoggedIn(true);
   }
 

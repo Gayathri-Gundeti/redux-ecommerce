@@ -4,7 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export function Login() {
-  const storedata = useSelector((state) => state);
+  const storedata = useSelector((state) => state.app);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,9 +13,9 @@ export function Login() {
   const [passworderror, setPassworderror] = useState("");
 
   let navigate = useNavigate();
-//   useEffect(() => {
-//     console.log(`Email:${storedata.Email}`);
-//   }, []);
+  useEffect(() => {
+    console.log(`Email:${storedata.Email}`);
+  }, []);
 
   function handleEmail(e) {
     setEmail(e.target.value);
@@ -40,7 +41,7 @@ export function Login() {
       setPassworderror("User not found. Please register.");
     } else {
       setPassworderror("");
-      navigate("/");
+      navigate("/Cart");
     }
   }
   return (
