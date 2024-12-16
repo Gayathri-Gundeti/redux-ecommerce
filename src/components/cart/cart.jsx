@@ -2,36 +2,31 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavBar } from "../navbar/navbar";
 import "./cart.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { RemoveFromCart } from "../../redux/store";
 
 export function Cart() {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.app.Array || []);
 
-  const cartItems = useSelector((state) => state.Array || []);
-  const [data, setData] = useState([]);
-  console.log(data);
-
-  function handleRemoveClick(Id) {
-    const newdata = data.filter((item) => item.id !== Id);
-    setData(newdata);
-    localStorage.setItem("names", JSON.stringify(newdata));
-    navigate("/");
+  function handleRemoveClick(itemId) {
+    dispatch(RemoveFromCart(itemId));
   }
 
   // useEffect(() => {
-  //   setData(Array.isArray(cartItems) ? cartItems : []);
-  //   console.log("Data", cartItems);
+  //   const MappedData = cartItems.map((item) => item.items);
+  //   setData(MappedData);
+  //   console.log("Updated Cart Data", MappedData);
   // }, [cartItems]);
 
-  useEffect(() => {
-    const MappedData = cartItems.map((item) => item.items);
-    setData(MappedData);
-    console.log("Updated Cart Data", MappedData);
-  }, [cartItems]);
+  // const totalAmount = Array.isArray(data)
+  //   ? data.reduce((total, item) => total + (item.price || 0), 0).toFixed(2)
+  //   : "0.00";
 
-  const totalAmount = Array.isArray(data)
-    ? data.reduce((total, item) => total + (item.price || 0), 0).toFixed(2)
-    : "0.00";
+  const totalAmount = cartItems
+    .reduce((total, item) => total + item.price, 0)
+    .toFixed(2); // Calculate total
 
   return (
     <div>
@@ -41,7 +36,7 @@ export function Cart() {
           <div className="card cart-card">
             <div className="card-header cart-card-header">Cart Details</div>
             <div className="card-body cart-card-body">
-              {data.map((item) => (
+              {cartItems.map((item) => (
                 <div className="body-part" key={item.id}>
                   <div className="me-4">
                     <img src={item.image} alt={item.title} />
