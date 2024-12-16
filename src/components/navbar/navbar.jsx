@@ -38,7 +38,6 @@ export function NavBar() {
     // localStorage.removeItem("Name");
     // localStorage.removeItem("Email");
     // localStorage.removeItem("Password");
-    dispatch(Logout());
     setIsLoggedIn(true);
   }
 

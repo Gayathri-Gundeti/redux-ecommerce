@@ -72,12 +72,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Addcart } from "../../redux/store";
 
 export function MenCategory() {
-  const storedata = useSelector((state) => state.app);
+  const storedata = useSelector((state) => state);
   const dispatch = useDispatch();
   const [data, setData] = useState([]);
   const [load, setLoad] = useState(false);
   let navigate = useNavigate();
-
   function LoadProducts() {
     setLoad(true);
     axios
@@ -87,30 +86,32 @@ export function MenCategory() {
         setData(response.data);
       });
   }
-
   function handleAddClick(item) {
-    // Dispatch Addcart action to add the item to the cart
+    // let arr = JSON.parse(localStorage.getItem("names")) || [];
+    // arr = [...arr, item];
+    // localStorage.setItem("names", JSON.stringify(arr));
     dispatch(Addcart(item));
-    console.log("Added item to cart:", dispatch(Addcart(item)));
+    console.log(dispatch(Addcart(item)));
     navigate("/Cart");
   }
-
   useEffect(() => {
     LoadProducts();
-  }, []);
-
+    console.log("store=", storedata.Array);
+  }, [storedata.Array]);
+  
   return (
     <div className="men-container">
       <NavBar />
       <div>
         <h3>Men's Category</h3>
+        {/* <h3 style={{textAlign:'center',color:'orange'}}>{load}</h3> */}
         {load && <div className="loader"></div>}
       </div>
       <div className="men-card-part">
         {data.map((item) => (
-          <div className="card men-card" key={item.id}>
+          <div className="card men-card">
             <div className="card-header men-card-header">
-              <img src={item.image} alt={item.title} />
+              <img src={item.image} />
             </div>
             <div className="card-body men-card-body">
               <div>

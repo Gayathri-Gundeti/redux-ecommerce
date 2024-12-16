@@ -10,7 +10,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import store from './redux/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from "redux-persist/integration/react";
-import { persistor } from './redux/store';
+import  {persistor}  from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
