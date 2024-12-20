@@ -107,7 +107,7 @@ export function NavBar() {
           <span
             className="bi bi-cart"
             onClick={handleCart}
-            style={{ textDecoration: "none", color: "black" }}
+            style={{ textDecoration: "none", color: "black",cursor:"pointer" }}
           >
             Cart
             <span className="text-danger p-1 bg-warning rounded-4">{storedata.cart.length}</span>
@@ -212,9 +212,9 @@ export function NavBar() {
           </div>
           <div>
             <Link to={"/Cart"} style={{ textDecoration: "none", color: "black" }}>
-              <span className="bi bi-cart">
+              <span className="bi bi-cart" style={{cursor:"pointer"}}>
                 Cart
-                <span className="text-danger p-2">{cart}</span>
+                <span className="text-danger p-2">{storedata.cart.length}</span>
               </span>
             </Link>
           </div>
