@@ -3,7 +3,10 @@ import React, { useEffect, useState } from "react";
 import "./jewelery.css";
 import { NavBar } from "../navbar/navbar";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/store";
 export function Jewelery(){
+    const dispatch=useDispatch();
     const[data,setData]=useState([]);
     const[load,setLoad]=useState(false);
     let navigate=useNavigate();
@@ -16,9 +19,10 @@ export function Jewelery(){
         })
     }
     function handleAddClick(item) {
-        let arr = JSON.parse(localStorage.getItem("names")) || [];
-        arr = [...arr, item];
-        localStorage.setItem("names", JSON.stringify(arr));
+        // let arr = JSON.parse(localStorage.getItem("names")) || [];
+        // arr = [...arr, item];
+        // localStorage.setItem("names", JSON.stringify(arr));
+        dispatch(addItem(item));
         navigate("/Cart");
         
     }

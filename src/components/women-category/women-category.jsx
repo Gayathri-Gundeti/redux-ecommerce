@@ -3,10 +3,14 @@ import React, { useEffect, useState } from "react";
 import "./women-category.css";
 import { NavBar } from "../navbar/navbar";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../redux/store";
 export function WomenCategory(){
+    const dispatch=useDispatch();
     const[data,setData]=useState([]);
     const[load,setLoad]=useState(false);
     let navigate=useNavigate();
+
     function LoadProducts(){
         setLoad(true);
         axios.get("https://fakestoreapi.com/products/category/women's%20clothing")
@@ -17,9 +21,10 @@ export function WomenCategory(){
     }
    
     function handleAddClick(item) {
-        let arr = JSON.parse(localStorage.getItem("names")) || [];
-        arr = [...arr, item];
-        localStorage.setItem("names", JSON.stringify(arr));
+        // let arr = JSON.parse(localStorage.getItem("names")) || [];
+        // arr = [...arr, item];
+        // localStorage.setItem("names", JSON.stringify(arr));
+        dispatch(addItem(item));
         navigate("/Cart");
         
     }

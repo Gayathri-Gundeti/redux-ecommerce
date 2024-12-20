@@ -6,12 +6,12 @@ import {Logout} from "../../redux/store";
 
 
 export function NavBar() {
-  const storedata=useSelector((state)=>state.app);
+  const storedata=useSelector((state)=>state);
   const dispatch=useDispatch();
   const [data,setData]=useState(storedata.Array);
   // const [data, setData] = useState(JSON.parse(localStorage.getItem("names")) || []);
   // const [user] = useState(localStorage.getItem("Name"));
-  const[user]=useState(storedata.Name);
+  // const[user]=useState(storedata.Name);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   // const email = localStorage.getItem("Email");
   const email=storedata.Email;
@@ -110,7 +110,7 @@ export function NavBar() {
             style={{ textDecoration: "none", color: "black" }}
           >
             Cart
-            <span className="text-danger p-1 bg-warning rounded-4">{cart}</span>
+            <span className="text-danger p-1 bg-warning rounded-4">{storedata.cart.length}</span>
           </span>
 
           <span className="dropdown">
@@ -147,7 +147,7 @@ export function NavBar() {
               )}
             </ul>
           </span>
-          <span style={{ color: "orange", fontWeight: "bold" }}>{user}</span>
+          {/* <span style={{ color: "orange", fontWeight: "bold" }}>{user}</span> */}
         </div>
       </nav>
 
@@ -255,7 +255,7 @@ export function NavBar() {
             
           </div>
           <div>
-            <span style={{ color: "orange", fontWeight: "bold" }}>{user}</span>
+            {/* <span style={{ color: "orange", fontWeight: "bold" }}>{user}</span> */}
             </div>
         </div>
       </div>
