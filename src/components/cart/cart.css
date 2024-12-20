@@ -1,8 +1,8 @@
-
+/* 
 
 .cart-container{
     display: grid;
-    grid-template-columns: 8fr 4fr;
+    grid-template-columns: 7fr 5fr;
     padding: 30px;
 }
 .cart-card-header{
@@ -21,6 +21,11 @@
     display: grid;
     grid-template-columns: 2fr 8fr 2fr;
     margin-bottom: 20px;
+}
+.card-text{
+    width: 50%;
+    margin: auto;
+    margin-left: -5px;
 }
 .checkout-part{
     justify-content: center;
@@ -51,4 +56,108 @@
         margin-top: 20px;
     }
    
+} */
+
+.bg-cart{
+    background-color: rgb(237, 236, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    padding-bottom: 60px;
+}
+.sub-bg-cart{
+    background-color: white;
+    /* border: 1px solid black; */
+    box-shadow: 3px 3px 20px black;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    width: 70%;
+    padding: 20px;
+    border-radius: 10px;
+    height: 400px;
+    
+
+}
+.left-side{
+    height: 350px;
+    overflow-y: auto;
+    
+}
+.right-side{
+    background-color: rgb(237, 236, 236);
+    margin: -20px;
+    padding: 20px;
+    overflow-y: auto;
+    height: 400px;
+}
+.title-shop{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px;
+}
+.summary-title{
+    font-size: 18px;
+    font-weight: bold;
+}
+.cards-body{
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr; 
+}
+.res-close{
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+}
+.cards-body img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding-right: 30px;
+  
+
+}
+@media screen and (max-width:992px){
+    .sub-bg-cart{
+        display: grid;
+        grid-template-columns: 12fr;
+        height: auto;
+    }
+    .right-side{
+        background-color: rgb(237, 236, 236);
+        margin-top: 0px;
+        padding: 20px;
+    }
+    .res-close{
+        display: grid;
+        grid-template-columns: 8fr 4fr;
+    }
+}
+@media screen and (max-width:768px){
+    .cards-body{
+        display: block;
+    }
+    .cards-body img{
+        width: 30%;
+        height: 30%;
+        object-fit: cover;
+    }
+    .res-close{
+        display: grid;
+        grid-template-columns: 8fr 4fr;
+    }
+    
+}
+@media screen and (max-width:550px){
+    .cards-body img{
+        width: 30%;
+        height: 30%;
+        object-fit: cover;
+    }
+    .sub-bg-cart{
+        width: 90%;
+    }
 }

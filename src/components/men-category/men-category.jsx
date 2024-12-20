@@ -12,6 +12,7 @@ export function MenCategory() {
   const dispatch = useDispatch();
   const [data, setData] = useState([]);
   const [load, setLoad] = useState(false);
+   
   const navigate = useNavigate();
 
   function LoadProducts() {

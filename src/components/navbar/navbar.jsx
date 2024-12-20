@@ -49,7 +49,11 @@ export function NavBar() {
       navigate("/Cart");
     }
   }
-
+  function handleCategory(){
+    if(isLoggedIn===true){
+      navigate("/Login");
+    }
+  }
   // Update cart value based on login status and data
   useEffect(() => {
     if (isLoggedIn === true) {
@@ -77,7 +81,7 @@ export function NavBar() {
               className="dropdown-toggle bi bi-list"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer" }} onClick={handleCategory}
             >
               Categories
             </span>
@@ -182,7 +186,7 @@ export function NavBar() {
                 className="dropdown-toggle bi bi-list"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer" } } onClick={handleCategory}
               >
                 Categories
               </span>
